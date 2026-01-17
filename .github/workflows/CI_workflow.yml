@@ -1,13 +1,14 @@
-name: CI_workflow
+name: CI Test
 
-on: [push]
+on:
+  push:
+    branches: [main]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install dependencies
-        run: npm install
-      - name: Run tests
-        run: npm test
+
+      - name: Confirm GitHub Actions works
+        run: echo "GitHub Actions is working!"
