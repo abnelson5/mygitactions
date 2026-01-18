@@ -24,3 +24,9 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ${{ secrets.DOCKER_USERNAME }}/fundraising-site:latest
+
+- name: Build Docker image
+  run: |
+    docker build -t ${{ secrets.DOCKER_USERNAME }}/fundraising-site:${{ github.sha }} .
+    docker tag ${{ secrets.DOCKER_USERNAME }}/fundraising-site:${{ github.sha }} \
+               ${{ secrets.DOCKER_USERNAME }}/fundraising-site:latest
