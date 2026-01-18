@@ -1,4 +1,4 @@
-name: CI Test
+name: GitHub Actions Test
 
 on:
   push:
@@ -9,6 +9,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
-      - name: Confirm GitHub Actions works
-        run: echo "GitHub Actions is working!"
+      - name: Success message
+        run: echo "CI is working correctly!"
